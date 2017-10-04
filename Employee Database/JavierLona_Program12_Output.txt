@@ -1,0 +1,18 @@
+Successful connection to database.
+
+-- Select Employee Type Menu -- 
+1. Base Plus Commission
+2. Commission
+3. Hourly Employee
+4. Salary Employee
+0. Exit
+Enter choice: 4
+Enter Social Security Number: 999-99-9999
+Enter First Name: Javier
+Enter Last Name: Lona
+Enter Birthday: 2017-05-01
+Enter Department Name: SALES
+Enter bonus: 530.50
+Enter weekly salary: 990
+Query Ok, 1 row affected in employees table
+Query Ok, 1 row affected in salariedEmployees table
