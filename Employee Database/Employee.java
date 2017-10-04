@@ -1,31 +1,7 @@
 import java.sql.*;
 import java.util.Scanner;
 
-// Fig. 10.4: Employee.java
-// Employee superclass.
-
-//********************************************************************
-//
-//  Author:               Javier Lona
-//
-//  Program #:            12
-//
-//  File Name:            Employee.java
-//
-//  Course:               ITSE 2317 Intermediate Java
-//
-//  Due Date:             Wednesday, May 10, 2017
-//
-//  Instructor:           Fred Kumi 
-//
-//  Chapter:              Chapter 24: Accessing Databases with JDBC
-//
-//  Description:
-//     Adds employee to appropriate tables in MySQL database.
-//
-//********************************************************************
-
-public class Employee 
+public class Employee
 {
 	protected final String firstName;
 	protected final String lastName;
@@ -37,19 +13,19 @@ public class Employee
 
 
 	// constructor
-	public Employee(String firstName, String lastName, 
+	public Employee(String firstName, String lastName,
 		String socialSecurityNumber, String birthday, String empType,
 		String deptName, double bonus)
 	{
-		this.firstName = firstName;                                    
-		this.lastName = lastName;                                    
-		this.socialSecurityNumber = socialSecurityNumber; 
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.socialSecurityNumber = socialSecurityNumber;
 		this.birthday = birthday;
 		this.empType = empType;
 		this.deptName = deptName;
 		this.bonus = bonus;
 	}
-   
+
    public Employee()
    {
 		Scanner input = new Scanner(System.in);
@@ -67,14 +43,14 @@ public class Employee
 		System.out.printf("Enter bonus: ");
 		bonus = input.nextDouble();
    }
-   
-	public void addNewEmployee(PreparedStatement statement, 
+
+	public void addNewEmployee(PreparedStatement statement,
 		Connection connection) throws SQLException
 	{
 		statement = connection.prepareStatement(
 			"INSERT INTO employees " +
 			"(socialSecurityNumber, firstName, lastName, birthday, " +
-			"employeeType, departmentName)" + 
+			"employeeType, departmentName)" +
 			"VALUES (?, ?, ?, ?, ?, ?)");
 
 		int result = 0;

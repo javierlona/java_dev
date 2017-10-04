@@ -3,38 +3,14 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-// Fig. 10.7: CommissionEmployee.java
-// CommissionEmployee class extends Employee.
-
-//********************************************************************
-//
-//  Author:               Javier Lona
-//
-//  Program #:            12
-//
-//  File Name:            CommissionEmployee.java
-//
-//  Course:               ITSE 2317 Intermediate Java
-//
-//  Due Date:             Wednesday, May 10, 2017
-//
-//  Instructor:           Fred Kumi 
-//
-//  Chapter:              Chapter 24: Accessing Databases with JDBC
-//
-//  Description:
-//     Adds employee to appropriate tables in MySQL database.
-//
-//********************************************************************
-
-public class CommissionEmployee extends Employee 
+public class CommissionEmployee extends Employee
 {
 	protected double grossSales; // gross weekly sales
 	protected double commissionRate; // commission percentage
 
    // constructor
-	public CommissionEmployee(String firstName, String lastName, 
-		String socialSecurityNumber, String birthday, String empType, String 
+	public CommissionEmployee(String firstName, String lastName,
+		String socialSecurityNumber, String birthday, String empType, String
 		deptName, double bonus, double grossSales, double commissionRate)
    {
 		super(firstName, lastName, socialSecurityNumber, birthday, "commissionEmployee",
@@ -43,7 +19,7 @@ public class CommissionEmployee extends Employee
 		this.grossSales = grossSales;
 		this.commissionRate = commissionRate;
    }
-   
+
    public CommissionEmployee()
    {
 		super();
@@ -54,9 +30,9 @@ public class CommissionEmployee extends Employee
 		System.out.printf("Enter commission rate: ");
 		commissionRate = input.nextDouble();
    }
-   
+
    @Override
-   public void addNewEmployee(PreparedStatement statement, 
+   public void addNewEmployee(PreparedStatement statement,
 	   Connection connection) throws SQLException
 	{
 		super.addNewEmployee(statement, connection);
