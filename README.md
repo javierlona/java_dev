@@ -1,2 +1,1 @@
-# java_dev
-My Java projects
+A program which utilizes Java's JDBC with MySQL.
